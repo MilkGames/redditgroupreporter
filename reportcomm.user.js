@@ -2,7 +2,7 @@
 // @name         Reddit Steam Group Comment Reporter
 // @namespace    MilkGames
 // @version      0.1
-// @description  More options to delete comments
+// @description  Report comments on the Reddit Steam group.
 // @author       MilkGames -- Royalgamer06 for original script
 // @match        *://steamcommunity.com/groups/reddit*
 // @grant        none
