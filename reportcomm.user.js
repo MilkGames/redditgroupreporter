@@ -9,7 +9,7 @@
 // ==/UserScript==
 
 (function() {
-    var element = document.createElement("poopyjoe");
+    var element = document.createElement("reportcount");
 	var reports = localStorage.getItem("reports");
 	if (reports === null) {
 		localStorage.setItem("reports", "0");
@@ -17,14 +17,20 @@
 		reports = localStorage.getItem("reports");
 	}
     element.appendChild(document.createTextNode('Reports: ' + reports));
-    document.getElementsByClassName('grouppage_header_name')[0].appendChild(element);
-	element.style.fontSize = "16px";
-	element.style.color = "Red";
+    document.getElementsByClassName('commentthread_count')[0].appendChild(element);
+	jQuery("reportcount").css( {
+	   'color' : '#d65d5d',
+ 	   'border' : '1px solid #565656',
+	   'border-radius': '10px',
+   	   'padding' : '3px',
+	   'padding-left' : '4px',
+	   'padding-right' : '4px',
+	   'height' : '10px' } );
     var $comments = jQuery("[class*='commentthread_comment_timestamp']");
     if ($comments.length > 0) {
         $comments.after(' <a class="actionlink repcomment">Report Comment</a><a class="actionlink">');
     }
-
+    jQuery(".commentthread_allcommentslink").css("margin-right", "7px");
     jQuery(".repcomment").click(function() {
         var $this = jQuery(this);
         var author = $this.parent().find(".commentthread_author_link").attr("data-miniprofile");
