@@ -27,7 +27,7 @@
             xhr.open("POST", "http://steamcommunity.com/comment/ForumTopic/post/103582791429796426/864943227215847264/");
             xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
             xhr.send(datatosend);
-            ShowAlertDialog('Thank You!', 'Thank you for reporting a comment to the Reddit Group Moderators. \nYou may view your report <a href="http://steamcommunity.com/groups/reddit/discussions/0/1456202492181247164">here</a>.');
+            ShowAlertDialog('Thank You!', 'Thank you for reporting a comment to the Reddit Group Moderators. \nYou may view your report <a href="http://steamcommunity.com/groups/reddit/discussions/0/1488861734111023805">here</a>.');
             // IT WORKS! ... I hope.
         }
     });
