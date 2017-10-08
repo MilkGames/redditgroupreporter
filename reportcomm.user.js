@@ -9,6 +9,17 @@
 // ==/UserScript==
 
 (function() {
+    var element = document.createElement("poopyjoe");
+	var reports = localStorage.getItem("reports");
+	if (reports === null) {
+		localStorage.setItem("reports", "0");
+		//Since reports was originally "null", and we need to be userfriendly, we set the reports to the number "0", and update the var.
+		reports = localStorage.getItem("reports");
+	}
+    element.appendChild(document.createTextNode('Reports: ' + reports));
+    document.getElementsByClassName('grouppage_header_name')[0].appendChild(element);
+	element.style.fontSize = "16px";
+	element.style.color = "Red";
     var $comments = jQuery("[class*='commentthread_comment_timestamp']");
     if ($comments.length > 0) {
         $comments.after(' <a class="actionlink repcomment">Report Comment</a><a class="actionlink">');
@@ -28,6 +39,11 @@
             xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
             xhr.send(datatosend);
             ShowAlertDialog('Thank You!', 'Thank you for reporting a comment to the Reddit Group Moderators. \nYou may view your report <a href="http://steamcommunity.com/groups/reddit/discussions/0/1488861734111023805">here</a>.');
+            localStorage.setItem('reports',parseInt(reports)+1);
+            //Make sure to parse it as an int, not a string, otherwise you get 01, 011, 0111, etc.
+            reports = localStorage.getItem("reports");
+            element.innerHTML = "Reports: "+reports;
+            //Update the Report number on top of page. Live updates whooooo!11
             // IT WORKS! ... I hope.
         }
     });
