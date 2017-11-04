@@ -47,7 +47,7 @@
                     if (xhr.responseText === '{"success":false}') { // Is the response text {"success":false}? Let the user know something went wrong.
                         ShowAlertDialog('Reddit Steam Group Reporter', 'Whoops! It looks like something went wrong. Try again?');
                     } else { // Else? It should be all fine :)
-                        ShowAlertDialog('Thank You!', 'Thank you for reporting a comment to the Reddit Group Moderators. \nYou may view your report <a href="http://steamcommunity.com/groups/reddit/discussions/0/1488861734111023805">here</a>.');
+                        ShowAlertDialog('Thank You!', 'Thank you for reporting a comment to the Reddit Group Moderators. \nYou may view your report <a href="http://steamcommunity.com/groups/reddit/discussions/0/1479857071262320410">here</a>.');
                         localStorage.setItem('reports',parseInt(reports)+1);
                         //Make sure to parse it as an int, not a string, otherwise you get 01, 011, 0111, etc.
                         localStorage.setItem(dateu,"");
