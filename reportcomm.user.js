@@ -35,6 +35,7 @@
         var $this = jQuery(this);
         var author = $this.parent().find(".commentthread_author_link").attr("data-miniprofile");
         var date = $this.parent().find(".commentthread_comment_timestamp").attr("title");
+        var dateu = $this.parent().find(".commentthread_comment_timestamp").attr("data-timestamp");
         ShowPromptDialog( "Please enter the reason for reporting this comment.", "Report abusive comments to the moderators.", "Submit Report", "Cancel")
         .done(function(reason, other) {
 		    if (reason) {
@@ -48,6 +49,8 @@
             ShowAlertDialog('Thank You!', 'Thank you for reporting a comment to the Reddit Group Moderators. \nYou may view your report <a href="http://steamcommunity.com/groups/reddit/discussions/0/1488861734111023805">here</a>.');
             localStorage.setItem('reports',parseInt(reports)+1);
             //Make sure to parse it as an int, not a string, otherwise you get 01, 011, 0111, etc.
+            localStorage.setItem(dateu,"");
+            //Makes a localStorage item with the Unix Timestamp - prevent doublereports?
             reports = localStorage.getItem("reports");
             element.innerHTML = "Reports: "+reports;
             //Update the Report number on top of page. Live updates whooooo!11
