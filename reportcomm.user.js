@@ -36,7 +36,7 @@
         var author = $this.parent().find(".commentthread_author_link").attr("data-miniprofile");
         var date = $this.parent().find(".commentthread_comment_timestamp").attr("title");
         var dateu = $this.parent().find(".commentthread_comment_timestamp").attr("data-timestamp");
-        ShowPromptDialog( "Please enter the reason for reporting this comment.", "Report abusive comments to the moderators.", "Submit Report", "Cancel")
+        ShowPromptDialog( "Reporting a Comment", "Please enter your reasoning for reporting this comment", "Submit Report", "Cancel")
         .done(function(reason, other) {
 		    if (reason) {
             // Ugly code pls no to kill
