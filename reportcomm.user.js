@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Reddit Steam Group Comment Reporter
 // @namespace    MilkGames
-// @version      0.1
+// @version      0.2
 // @description  Report comments on the Reddit Steam group.
 // @author       MilkGames -- Royalgamer06 for original script
 // @match        *://steamcommunity.com/groups/reddit
