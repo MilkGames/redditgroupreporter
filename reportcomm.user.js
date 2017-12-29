@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Reddit Steam Group Comment Reporter
 // @namespace    MilkGames
-// @version      0.21
+// @version      0.22
 // @description  Report comments on the Reddit Steam group.
 // @author       MilkGames
 // @match        *://steamcommunity.com/groups/reddit
@@ -9,6 +9,12 @@
 // ==/UserScript==
 
 (function() {
+    if (!localStorage.getItem("noticeok")) { // If localStorage doesn't have item notice ok
+        ShowAlertDialog( "Reddit Steam Group Reporter", "<h3>Message from Reddit Group Reporter developers:</h3>\nA Chrome extension is currently in development. I'm not certain when this extension will release but I wanted to give a headsup before this userscript suddenly stops working. A Firefox extension should also be released at the same time. \n\n<h1>Thank you for understanding.</h1>", "Understood" )
+        .done(function() {
+        localStorage.setItem("noticeok", "true"); // Show notice & if done (ok button pressed) set localStorage item noticeok to true.
+        }
+    );}
     var element = document.createElement("reportcount");
 	var reports = localStorage.getItem("reports");
 	if (reports === null) {
