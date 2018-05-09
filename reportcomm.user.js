@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Reddit Steam Group Comment Reporter
 // @namespace    MilkGames
-// @version      0.22
+// @version      0.3
 // @description  Report comments on the Reddit Steam group.
 // @author       MilkGames
 // @match        *://steamcommunity.com/groups/reddit
@@ -9,15 +9,7 @@
 // ==/UserScript==
 
 (function() {
-    if (localStorage.getItem("noticeok")) {
-        localStorage.removeItem("noticeok");
-    }
-    if (!localStorage.getItem("notice2ok")) {
-        ShowAlertDialog( "Reddit Steam Group Reporter", "<h3>Message from Reddit Group Reporter developers:</h3>\nStatus of Chrome extension: Errors, errors, and errors. I've been dealing with a bunch of errors mainly in relation with the grabbing of cookies. If anyone would like to help me out, <a href='steam://friends/add/76561198104867238'>please do</a> or add me via Discord (MilkGames#6495) \n\n\n<img height='450' width='850' src='https://milkgames.pw/file/8FrI.gif'>\n\n<h1>Thank you for understanding.</h1>", "Understood" )
-        .done(function() {
-        localStorage.setItem("notice2ok", "true"); // Show notice & if done (ok button pressed) set localStorage item noticeok to true.
-        }
-    );}
+    document.getElementsByClassName("maincontent")[1].insertAdjacentHTML("beforebegin", "<div id='notice' style='background: darkred;height: 55px;width: 66%;margin: auto;'><div id='noticecontent' style='color: white;color: white;position: relative;top: 50%;transform: translateY(-50%);text-align: center;'>Reddit Steam Group Comment Reporter is being deprecated.<br>After May 15th, reporting comments will no longer work.</div></div>");
     var element = document.createElement("reportcount");
     var reports = localStorage.getItem("reports");
     if (reports === null) {
