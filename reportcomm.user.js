@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Reddit Steam Group Comment Reporter
 // @namespace    MilkGames
-// @version      0.3
+// @version      1.0
 // @description  Report comments on the Reddit Steam group.
 // @author       MilkGames
 // @match        *://steamcommunity.com/groups/reddit
@@ -9,7 +9,7 @@
 // ==/UserScript==
 
 (function() {
-    document.getElementsByClassName("maincontent")[1].insertAdjacentHTML("beforebegin", "<div id='notice' style='background: darkred;height: 55px;width: 66%;margin: auto;'><div id='noticecontent' style='color: white;color: white;position: relative;top: 50%;transform: translateY(-50%);text-align: center;'>Reddit Steam Group Comment Reporter is being deprecated.<br>After May 15th, reporting comments will no longer work.</div></div>");
+    document.getElementsByClassName("maincontent")[1].insertAdjacentHTML("beforebegin", "<div id='notice' style='background: darkred;height: 55px;width: 66%;margin: auto;'><div id='noticecontent' style='color: white;color: white;position: relative;top: 50%;transform: translateY(-50%);text-align: center;'>Reddit Steam Group Comment Reporter is deprecated.</div></div>");
     var element = document.createElement("reportcount");
     var reports = localStorage.getItem("reports");
     if (reports === null) {
